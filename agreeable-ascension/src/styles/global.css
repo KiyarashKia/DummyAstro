@@ -1,0 +1,163 @@
+body {
+  background: #0f0f0f;
+  color: #eaeaea;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+
+/* Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  grid-template-areas:
+    "about about about about about about about about about about about about"
+    "tech tech tech tech tech tech stats stats stats stats stats stats"
+    "reviews reviews reviews reviews reviews reviews snake snake snake snake snake snake";
+}
+
+/* Card Styles */
+.bento-card {
+  background: #161616;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+.bento-card:hover {
+  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bento-card h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bento-card p,
+.bento-card ul {
+  color: #b5b5b5;
+  line-height: 1.6;
+}
+
+.bento-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+
+p, li {
+  color: #b5b5b5;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #b5b5b5;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Grid Area Assignments */
+.about {
+  grid-area: about;
+}
+
+/* Tech Stack Section */
+.tech {
+  grid-area: tech;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech .badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Add spacing between badges */
+  justify-content: center;
+  padding: 1rem;
+}
+
+.tech .badges-container img {
+  height: 40px; /* Increase badge size */
+  padding: 0.5rem; /* Add padding around badges */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  background: #1f1f1f; /* Optional: Add background for better visibility */
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.reviews {
+  grid-area: reviews;
+}
+
+/* Snake Section */
+.snake {
+  grid-area: snake;
+  width: 100%; /* Use 100% width to fit the grid container */
+  background: #161616; /* Ensure consistent background */
+  padding: 2rem 0; /* Add vertical padding for spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.snake h3 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.snake img {
+  max-width: 100%; /* Ensure the image scales properly */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about"
+      "tech"
+      "stats"
+      "reviews"
+      "snake";
+  }
+
+  .bento-card {
+    border-radius: 16px;
+  }
+}
